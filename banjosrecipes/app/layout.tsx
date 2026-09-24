@@ -1,0 +1,4 @@
+import "./globals.css"
+import Link from "next/link"
+export const metadata = { title: "Danjo Recipes · The recipe notebook", description: "A personal collection of recipes, from everyday favourites to something sweet." }
+export default function RootLayout({children}:{children:React.ReactNode}) {return <html lang="en"><body><header className="header"><div className="headerInner"><Link href="/" className="brand"><span className="brandMark" aria-hidden="true">✳</span>Danjo<span className="brandLight">Recipes</span></Link><nav aria-label="Main navigation"><Link href="/recipes">The collection <span aria-hidden="true">↗</span></Link></nav><span className="headerNote">A LITTLE INSPIRATION FOR THE EVERYDAY</span></div></header>{children}<footer><Link className="brand" href="/">Danjo Recipes</Link><span>Good food. Kept close.</span><span>THE PERSONAL RECIPE NOTEBOOK</span></footer></body></html>}
