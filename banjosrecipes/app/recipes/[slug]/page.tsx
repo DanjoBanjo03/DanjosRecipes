@@ -49,10 +49,7 @@ function CookingView({ recipe }: { recipe: Recipe }) {
   const multiplier = servings / recipe.baseServings
   const invalid = validServings(draft) === null
 
-  // const totalMinutes =
-  //   recipe.prepMinutes +
-  //   recipe.cookMinutes +
-  //   (recipe.restMinutes ?? 0)
+  const totalMinutes = recipe.prepMinutes + recipe.cookMinutes + recipe.restMinutes
 
   return (
     <main className="container detail">
@@ -71,7 +68,7 @@ function CookingView({ recipe }: { recipe: Recipe }) {
           From the personal recipe notebook.
         </p>
 
-        {/* <div
+        <div
           className="recipeTimes"
           aria-label="Estimated recipe time"
         >
@@ -93,7 +90,7 @@ function CookingView({ recipe }: { recipe: Recipe }) {
 
           {recipe.restMinutes ? (
             <div>
-              <span>Wait</span>
+              <span>{recipe.restLabel || "Rest"}</span>
               <strong>
                 {formatMinutes(recipe.restMinutes)}
               </strong>
@@ -106,7 +103,8 @@ function CookingView({ recipe }: { recipe: Recipe }) {
               {formatMinutes(totalMinutes)}
             </strong>
           </div>
-        </div> */}
+        </div>
+        <p className="timeEstimate">Estimated for the base recipe. {recipe.timeNote} Larger batches may take longer; times do not scale automatically.</p>
       </div>
 
       {isChoice && (

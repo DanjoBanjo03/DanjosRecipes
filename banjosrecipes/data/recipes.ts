@@ -1,5 +1,5 @@
 export type Ingredient = { name: string; amount?: number; maximum?: number; unit?: string; heading?: boolean }
-export type Recipe = { slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
+export type Recipe = { prepMinutes: number; cookMinutes: number; restMinutes: number; restLabel: string; timeNote: string; slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
 export const recipes: Recipe[] = [
   {
     "slug": "shrimp-marinade",
@@ -57,7 +57,12 @@ export const recipes: Recipe[] = [
         "title": "Cooking temperature guide",
         "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
       }
-    ]
+    ],
+    "prepMinutes": 10,
+    "cookMinutes": 6,
+    "restMinutes": 15,
+    "restLabel": "Marinating",
+    "timeNote": "Allows 15 minutes to marinate; cook shrimp in a single layer."
   },
   {
     "slug": "chipotle-southwest-sauce",
@@ -134,7 +139,12 @@ export const recipes: Recipe[] = [
       "Stir all ingredients together until smooth.",
       "Cover and refrigerate for 30 minutes to let the flavours blend. Taste and adjust the lime, salt, or chipotle as desired."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "restMinutes": 30,
+    "restLabel": "Chilling",
+    "timeNote": "Includes 30 minutes for the flavours to blend."
   },
   {
     "slug": "chili",
@@ -242,7 +252,12 @@ export const recipes: Recipe[] = [
         "title": "Dried bean preparation guide",
         "url": "https://www.fda.gov/food/chemical-contaminants-pesticides/natural-toxins-food"
       }
-    ]
+    ],
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restMinutes": 480,
+    "restLabel": "Soaking",
+    "timeNote": "Includes an 8-hour overnight soak, about 90 minutes for the beans and a 1-hour simmer. Bean age can change cooking time."
   },
   {
     "slug": "tiramisu",
@@ -324,7 +339,12 @@ export const recipes: Recipe[] = [
         "title": "Tiramisu method reference",
         "url": "https://www.biggerbolderbaking.com/easy-10-minute-tiramisu/"
       }
-    ]
+    ],
+    "prepMinutes": 20,
+    "cookMinutes": 0,
+    "restMinutes": 240,
+    "restLabel": "Chilling",
+    "timeNote": "Includes a minimum 4-hour chill. Chilling overnight is also an option."
   },
   {
     "slug": "guacamole",
@@ -385,7 +405,12 @@ export const recipes: Recipe[] = [
       "Mix everything in a blender.",
       "If the guacamole starts turning black, add a bit of lemon juice."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Ready after blending; no cooking needed."
   },
   {
     "slug": "salsa",
@@ -438,7 +463,12 @@ export const recipes: Recipe[] = [
       "Stir in olive oil, salt, pepper, and lemon juice gradually. Taste and adjust; briefly blend further if you prefer a smoother salsa.",
       "Refrigerate for 20–30 minutes before serving."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restMinutes": 25,
+    "restLabel": "Chilling",
+    "timeNote": "Includes 25 minutes of chilling before serving."
   },
   {
     "slug": "pico-de-gallo",
@@ -498,7 +528,12 @@ export const recipes: Recipe[] = [
       "Stir the tomatoes, onion, cilantro, jalapeño pepper, lime juice, garlic, garlic powder, cumin, salt, and pepper together in a bowl.",
       "Refrigerate at least 3 hours before serving"
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "restMinutes": 180,
+    "restLabel": "Chilling",
+    "timeNote": "Includes the 3-hour refrigeration time from the method."
   },
   {
     "slug": "miso-soup",
@@ -554,7 +589,12 @@ export const recipes: Recipe[] = [
       "Serve warm.",
       "Best when fresh."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Includes bringing the broth to a simmer and cooking the greens."
   },
   {
     "slug": "sweet-and-sour-chicken",
@@ -649,7 +689,12 @@ export const recipes: Recipe[] = [
         "title": "Cooking temperature guide",
         "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
       }
-    ]
+    ],
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Allows time for frying and thickening the sauce; additional batches may take longer."
   },
   {
     "slug": "cream-puffs",
@@ -805,7 +850,12 @@ export const recipes: Recipe[] = [
       "Spoon a little over each filled pastry and let the chocolate set before serving.",
       "Store any leftovers in the fridge."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 45,
+    "cookMinutes": 45,
+    "restMinutes": 120,
+    "restLabel": "Cooling & chilling",
+    "timeNote": "Allows cooling the custard, chilling the filling and cooling the pastry. Baking multiple trays may take longer."
   },
   {
     "slug": "green-salad-dressing",
@@ -875,7 +925,12 @@ export const recipes: Recipe[] = [
       "Taste, then add more soy sauce if desired.",
       "Refrigerate until ready to serve."
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Ready after blending; refrigerate until serving."
   },
   {
     "slug": "ramen",
@@ -995,7 +1050,12 @@ export const recipes: Recipe[] = [
         "title": "Cooking temperature guide",
         "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
       }
-    ]
+    ],
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Assumes the broth and eggs are prepared while the chicken cooks."
   },
   {
     "slug": "pizza",
@@ -1101,7 +1161,12 @@ export const recipes: Recipe[] = [
         "title": "Pizza dough reference",
         "url": "https://sugarspunrun.com/the-best-pizza-dough-recipe/"
       }
-    ]
+    ],
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restMinutes": 45,
+    "restLabel": "Rising",
+    "timeNote": "Assumes the sauce simmers while the dough rises. Allows 45 minutes for rising and about 15–20 minutes to bake."
   },
   {
     "slug": "mongolian-beef",
@@ -1220,7 +1285,12 @@ export const recipes: Recipe[] = [
       "Serve the mongolian beef over the prepared rice.",
       "Enjoy!"
     ],
-    "references": []
+    "references": [],
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restMinutes": 15,
+    "restLabel": "Marinating",
+    "timeNote": "Includes a 15-minute marinade; excludes cooking rice."
   },
   {
     "slug": "korean-popcorn-chicken",
@@ -1333,6 +1403,11 @@ export const recipes: Recipe[] = [
         "title": "Cooking temperature guide",
         "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
       }
-    ]
+    ],
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restMinutes": 15,
+    "restLabel": "Marinating",
+    "timeNote": "Includes a 15-minute marinade and frying in small batches; excludes cooking rice."
   }
 ]
