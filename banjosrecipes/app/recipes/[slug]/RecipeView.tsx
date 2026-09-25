@@ -3,7 +3,9 @@
 import Link from "next/link"
 import { Icon } from "@/components/Icon"
 import { NutritionPanel } from "@/components/NutritionPanel"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useRecipeLibrary } from "@/lib/use-recipe-library"
+import { recordView, toggleFavorite } from "@/lib/recipe-library-store"
 import { type Recipe } from "@/data/recipes"
 import {
   validServings,
@@ -32,6 +34,9 @@ function formatMinutes(minutes: number) {
 }
 
 export default function RecipeView({ recipe }: { recipe: Recipe }) {
+  const favorites = useRecipeLibrary("favorites")
+  const favorite = favorites.includes(recipe.slug)
+  useEffect(() => { recordView(recipe.slug) }, [recipe.slug])
   const { choice } = useChefsChoice()
   const isChoice = choice === recipe.slug
 
@@ -62,6 +67,11 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
         </p>
 
         <h1>{recipe.title}</h1>
+        <button className="favoriteButton" type="button" aria-pressed={favorite} onClick={() => toggleFavorite(recipe.slug)}>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill={favorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.7"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+          {favorite ? "Saved to favorites" : "Save to favorites"}
+        </button>
+        <p className="libraryNote">Favorites are saved in this browser.</p>
 
         <p className="intro">
           From the personal recipe notebook.

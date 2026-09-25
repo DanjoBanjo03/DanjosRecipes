@@ -1,7 +1,5 @@
 # To do:
 - Personal: add photos to each recipe
-- "Recently viewed" or favorites using localStorage
-- Add Recipe structured data (schema.org Recipe JSON-LD) to each [slug] page — this is what lets Google show rich recipe cards in search results.
 
 # Claude Ideas:
 
