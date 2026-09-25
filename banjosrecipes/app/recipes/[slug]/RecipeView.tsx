@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { DietaryInfo } from "@/components/DietaryInfo"
 import { DifficultyMeter } from "@/components/DifficultyMeter"
 import { Icon } from "@/components/Icon"
 import { IngredientSwap } from "@/components/IngredientSwap"
@@ -138,6 +139,8 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
           <p>{recipe.note}</p>
         </aside>
       )}
+
+      <DietaryInfo slug={recipe.slug} />
 
       <section
         className="servingsPanel"

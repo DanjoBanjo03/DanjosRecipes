@@ -1,5 +1,7 @@
 "use client"
 import Link from "next/link"
+import { dietLabels, matchesDiets, type Diet } from "@/data/dietary"
+import { DietaryTags } from "@/components/DietaryInfo"
 import { DifficultyMeter } from "@/components/DifficultyMeter"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -17,6 +19,7 @@ export default function Home() {
   const recent = useRecipeLibrary("recent")
   const recentRecipes = recent.flatMap(slug => recipes.filter(recipe => recipe.slug === slug))
   
+  const [diets, setDiets] = useState<Diet[]>([])
   const [query,setQuery] = useState("")
   
   const [category,setCategory] = useState("All recipes")
@@ -34,7 +37,7 @@ export default function Home() {
           .toLowerCase()
           .includes(query.toLowerCase())
 
-      return matchesCategory && matchesSearch
+      return matchesCategory && matchesSearch && matchesDiets(r.slug, diets)
     })
     .sort(
       (a, b) =>
@@ -59,6 +62,11 @@ export default function Home() {
     
     <div className="filterRow"><div className="filters" aria-label="Recipe categories">{categories.map(c=><button key={c} aria-pressed={category===c} className={category===c?"active":""} onClick={()=>setCategory(c)}>{c}</button>)}</div><span className="count" aria-live="polite">{visible.length} recipes</span></div>
     
+    <fieldset className="dietaryFilters">
+      <legend>Dietary preferences</legend>
+      <div>{dietLabels.map(diet => <label key={diet}><input type="checkbox" checked={diets.includes(diet)} onChange={() => setDiets(current => current.includes(diet) ? current.filter(item => item !== diet) : [...current, diet])}/>{diet}</label>)}</div>
+      <p>Matches all selected tags for the written recipe. Recipes needing substitutions or special label checks are excluded. Always read the allergen notes.</p>
+    </fieldset>
     <div className="surpriseRow">
       <button className="surpriseButton" type="button" onClick={surpriseMe} disabled={visible.length === 0} aria-describedby="surprise-help">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="16" cy="8" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="8" cy="16" r="1" fill="currentColor"/><circle cx="16" cy="16" r="1" fill="currentColor"/></svg>
@@ -66,9 +74,9 @@ export default function Home() {
       </button>
       <p id="surprise-help">{visible.length === 0 ? "Try another filter to find a surprise." : visible.length === 1 ? "One recipe matches — let’s make it." : "A random pick from these recipes, favoring ones you haven’t viewed recently."}</p>
     </div>
-    <div className="recipeGrid">{visible.map(r=><Link key={r.slug} href={`/recipes/${r.slug}`} className={`recipeCard tone${categories.indexOf(r.category)} ${r.slug===choice?"chefSelected":""}`} >{r.slug===choice&&<span className="chefRibbon">Chef’s choice</span>}<div className="cardVisual" aria-hidden="true"><span className="cardIndex">NO. {String(r.number).padStart(2,"0")}</span><div className="foodSymbol"><CategoryIcon category={r.category}/></div><span className="visualLabel">THE RECIPE COLLECTION</span></div><div className="cardBody"><p className="eyebrow">{r.category}</p><h3>{r.title}</h3><DifficultyMeter level={r.difficulty} /><div className="cardBottom"><span>{r.note ? "Suggested details" : "From the notebook"}</span><Icon name="arrow" className="arrow"/></div></div></Link>)}</div>
+    <div className="recipeGrid">{visible.map(r=><Link key={r.slug} href={`/recipes/${r.slug}`} className={`recipeCard tone${categories.indexOf(r.category)} ${r.slug===choice?"chefSelected":""}`} >{r.slug===choice&&<span className="chefRibbon">Chef’s choice</span>}<div className="cardVisual" aria-hidden="true"><span className="cardIndex">NO. {String(r.number).padStart(2,"0")}</span><div className="foodSymbol"><CategoryIcon category={r.category}/></div><span className="visualLabel">THE RECIPE COLLECTION</span></div><div className="cardBody"><p className="eyebrow">{r.category}</p><h3>{r.title}</h3><DifficultyMeter level={r.difficulty} /><DietaryTags slug={r.slug} /><div className="cardBottom"><span>{r.note ? "Suggested details" : "From the notebook"}</span><Icon name="arrow" className="arrow"/></div></div></Link>)}</div>
     
-    {visible.length===0&&<div className="empty"><h3>{category === "Favorites" && favorites.length === 0 ? "No favorites yet" : "No recipes found"}</h3><p>{category === "Favorites" && favorites.length === 0 ? "Open a recipe and choose Save to favorites. Your favorites stay in this browser." : "Try a different ingredient or category."}</p><button className="primary" onClick={()=>{setQuery("");setCategory("All recipes")}}>Show all recipes</button></div>}
+    {visible.length===0&&<div className="empty"><h3>{category === "Favorites" && favorites.length === 0 ? "No favorites yet" : "No recipes found"}</h3><p>{category === "Favorites" && favorites.length === 0 ? "Open a recipe and choose Save to favorites. Your favorites stay in this browser." : "Try a different ingredient or category."}</p><button className="primary" onClick={()=>{setQuery("");setCategory("All recipes");setDiets([])}}>Show all recipes</button></div>}
     
     </section>
     <aside className="notebookNote"><Icon className="notebookIcon"/><div><h3>A notebook that grows with you.</h3><p>These recipes come from your Food recipes collection. Missing details have been filled in with practical suggestions. Choose how many people you’re cooking for in each recipe.</p></div></aside>
