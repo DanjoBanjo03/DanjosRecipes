@@ -2,6 +2,8 @@
 // Carbohydrate includes fibre. Calories use the general 4/4/9 estimate.
 export type NutritionEstimate = { carbs: number; fat: number; protein: number; assumptions: string }
 export const nutrition: Record<string, NutritionEstimate> = {
+ "crispy-beef-taquitos": {carbs:250,fat:155,protein:275,assumptions:"Estimated for 600 g 95% lean beef, 10 medium low-carb tortillas, 400 g low-fat cheese (40 g per taquito; macros vary by brand), 199 mL tomato sauce, 1 tsp oil and all avocado sauce. One serving is one taquito plus one-tenth of the sauce. Tortilla brands and fibre content vary greatly; the 4/4/9 calorie estimate may exceed package calories. These estimates are not the PDF’s claimed 300 calories and 35 g protein."},
+ "green-sauce": {carbs:35,fat:115,protein:12,assumptions:"Uses regular mayonnaise, 2% plain Greek yogurt, all the olive oil and loosely packed herbs. Assumes about 2 cups total; one serving is one-sixteenth of the batch, roughly 2 tbsp. Excludes any food served with the sauce."},
  "shrimp-marinade": {carbs:8,fat:30,protein:94,assumptions:"Assumes 1 lb raw peeled shrimp and all the marinade oil is eaten. No sides included."},
  "chipotle-southwest-sauce": {carbs:8,fat:82,protein:1,assumptions:"Uses regular full-fat mayonnaise. A serving is one-eighth of the sauce batch, roughly a tablespoon."},
  "chili": {carbs:296,fat:74,protein:184,assumptions:"Uses two cups of dry beans and 85% lean beef, with no fat drained. Includes optional pepper and celery; excludes rice, cheese and other toppings."},

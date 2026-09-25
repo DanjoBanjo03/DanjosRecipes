@@ -353,7 +353,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "guacamole",
-    "description": "Make fresh guacamole with avocado, onion, jalape\u00f1o, coriander and citrus. Follow the simple method and adjust the portions for your table.",
+    "description": "Make fresh guacamole with avocado, onion, jalapeño, coriander and citrus. Follow the simple method and adjust the portions for your table.",
     "title": "Guacamole",
     "category": "Sauces & sides",
     "ingredients": [
@@ -420,7 +420,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "salsa",
-    "description": "Blend a fresh tomato salsa with jalape\u00f1o, lemon and coriander. Includes ingredient quantities, chilling guidance and adjustable servings.",
+    "description": "Blend a fresh tomato salsa with jalapeño, lemon and coriander. Includes ingredient quantities, chilling guidance and adjustable servings.",
     "title": "Salsa",
     "category": "Sauces & sides",
     "ingredients": [
@@ -479,7 +479,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "pico-de-gallo",
-    "description": "Make pico de gallo with diced tomatoes, red onion, cilantro, jalape\u00f1o and lime. Follow the simple steps and scale the ingredients for your crowd.",
+    "description": "Make pico de gallo with diced tomatoes, red onion, cilantro, jalapeño and lime. Follow the simple steps and scale the ingredients for your crowd.",
     "title": "Pico De Gallo",
     "category": "Sauces & sides",
     "ingredients": [
@@ -1425,5 +1425,228 @@ export const recipes: Recipe[] = [
     "restMinutes": 15,
     "restLabel": "Marinating",
     "timeNote": "Includes a 15-minute marinade and frying in small batches; excludes cooking rice."
+  },
+  {
+    "slug": "crispy-beef-taquitos",
+    "title": "High Protein Crispy Beef Taquitos",
+    "description": "Make crispy beef taquitos with seasoned ground beef, two layers of cheese and a creamy avocado sauce. Includes pan-toasting instructions and adjustable portions.",
+    "category": "Mains",
+    "number": 16,
+    "baseServings": 10,
+    "servingNote": "Makes 10 taquitos: one taquito with avocado sauce per person as a snack. Allow two or more for a main course.",
+    "mealPrep": true,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Includes cooking the filling and toasting in batches; each batch toasts for about 6–8 minutes.",
+    "note": "Tomato sauce is estimated as half a 398 mL can (199 mL). Coriander is estimated as ¼ cup. Cooking time includes the filling and batches.",
+    "source": null,
+    "references": [],
+    "ingredients": [
+      {
+        "name": "Beef filling",
+        "heading": true
+      },
+      {
+        "name": "lean ground beef",
+        "amount": 600,
+        "unit": "g"
+      },
+      {
+        "name": "medium brown onion, diced",
+        "amount": 1
+      },
+      {
+        "name": "garlic powder",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "onion powder",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "smoked paprika",
+        "amount": 2,
+        "unit": "tsp"
+      },
+      {
+        "name": "dried oregano",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "ground cumin",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "cayenne",
+        "amount": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "salt",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "tomato sauce (estimated half of a 398 mL can)",
+        "amount": 199,
+        "unit": "ml"
+      },
+      {
+        "name": "oil or cooking spray, divided between the filling and toasting; add more only if needed",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "To assemble",
+        "heading": true
+      },
+      {
+        "name": "low-carb tortillas (Mission or similar)",
+        "amount": 10
+      },
+      {
+        "name": "low-fat cheese, grated (40 g per taquito, divided into two 20 g layers)",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "name": "Avocado sauce",
+        "heading": true
+      },
+      {
+        "name": "medium avocado, flesh only",
+        "amount": 1
+      },
+      {
+        "name": "garlic cloves",
+        "amount": 2
+      },
+      {
+        "name": "fresh coriander (cilantro), loosely packed",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "name": "water, plus a little more if needed",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "name": "lemon, juiced",
+        "amount": 0.5
+      },
+      {
+        "name": "Salt and pepper, to taste"
+      }
+    ],
+    "steps": [
+      "Heat a little of the oil in a wide pan over medium-high heat. Add the diced onion and cook, stirring, until soft and browned, about 6–8 minutes.",
+      "Add the ground beef, garlic powder, onion powder, smoked paprika, oregano, cumin, cayenne, pepper and salt. Break up the beef and cook until fully cooked through, about 7–10 minutes. Stir in the tomato sauce and simmer for 2–3 minutes until the filling is moist but not runny.",
+      "For the avocado sauce, blend the avocado, garlic, coriander, water, lemon juice, salt and pepper until smooth. Add a little more water if needed to make it pourable.",
+      "Warm the tortillas briefly if needed so they roll without cracking. On each tortilla, add layer 1: 20 g low-fat cheese; layer 2: one-tenth of the beef mixture for the base batch of 10 taquitos; layer 3: another 20 g low-fat cheese. Roll tightly. When scaling, divide the beef mixture equally among the tortillas and keep 20 g low-fat cheese in each cheese layer (40 g per taquito).",
+      "Heat a little of the remaining oil in a pan over medium heat. Place the taquitos seam-side down and toast in batches, turning carefully, until crispy on all sides and the cheese is melted, about 6–8 minutes per batch. Add a light coating of oil as needed.",
+      "Serve the crisp taquitos with the blended avocado sauce."
+    ]
+  },
+  {
+    "slug": "green-sauce",
+    "title": "Green Sauce",
+    "description": "Blend a creamy green sauce with cilantro, basil, mint, parsley, jalapeños and ají amarillo. Finish with lime and olive oil for a fresh, herby condiment.",
+    "category": "Sauces & sides",
+    "number": 17,
+    "baseServings": 16,
+    "servingNote": "Estimated yield: about 2 cups, or 16 servings of roughly 2 tablespoons.",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restMinutes": 0,
+    "restLabel": "",
+    "timeNote": "Includes washing and preparing the herbs and blending the sauce.",
+    "note": "The mint and parsley quantities are interpreted as ¼ cup each. “Ahi Amarillo” is interpreted as ají amarillo paste. Herbs are loosely packed; yield is estimated.",
+    "source": null,
+    "references": [],
+    "ingredients": [
+      {
+        "name": "mayonnaise",
+        "amount": 0.3333333333333333,
+        "unit": "cup"
+      },
+      {
+        "name": "Greek yogurt",
+        "amount": 0.3333333333333333,
+        "unit": "cup"
+      },
+      {
+        "name": "fresh cilantro, loosely packed",
+        "amount": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "fresh basil leaves, loosely packed",
+        "amount": 0.5,
+        "unit": "cup"
+      },
+      {
+        "name": "fresh mint leaves, loosely packed",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "name": "fresh parsley, loosely packed",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "name": "jalapeños, seeds removed",
+        "amount": 2
+      },
+      {
+        "name": "ají amarillo paste",
+        "amount": 1,
+        "unit": "tbsp"
+      },
+      {
+        "name": "lime, zested and juiced",
+        "amount": 1
+      },
+      {
+        "name": "white wine vinegar",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "honey",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "name": "Dijon mustard",
+        "amount": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "name": "Pinch of salt, then adjust to taste"
+      },
+      {
+        "name": "olive oil",
+        "amount": 0.25,
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      "Wash and dry the herbs. Remove the jalapeño stems and seeds. Zest and juice the lime.",
+      "Add the mayonnaise, Greek yogurt, cilantro, basil, mint, parsley, jalapeños, ají amarillo paste, lime zest and juice, white wine vinegar, honey, Dijon mustard and a pinch of salt to a blender. Blend until smooth, scraping down the sides as needed.",
+      "With the blender running, slowly stream in the olive oil until the sauce is smooth and emulsified. Taste and adjust the salt. Serve as a dressing, dip or sauce."
+    ]
   }
 ]

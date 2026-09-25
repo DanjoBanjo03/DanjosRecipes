@@ -3,7 +3,7 @@
 begin;
 create table if not exists public.chef_choice (
  id integer primary key check (id = 1),
- slug text check (slug in ('shrimp-marinade', 'chipotle-southwest-sauce', 'chili', 'tiramisu', 'guacamole', 'salsa', 'pico-de-gallo', 'miso-soup', 'sweet-and-sour-chicken', 'cream-puffs', 'green-salad-dressing', 'ramen', 'pizza', 'mongolian-beef', 'korean-popcorn-chicken'))
+ slug text check (slug in ('shrimp-marinade', 'chipotle-southwest-sauce', 'chili', 'tiramisu', 'guacamole', 'salsa', 'pico-de-gallo', 'miso-soup', 'sweet-and-sour-chicken', 'cream-puffs', 'green-salad-dressing', 'ramen', 'pizza', 'mongolian-beef', 'korean-popcorn-chicken', 'crispy-beef-taquitos', 'green-sauce'))
 );
 alter table public.chef_choice enable row level security;
 revoke all on public.chef_choice from anon, authenticated;
