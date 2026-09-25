@@ -13,3 +13,31 @@
 @media(hover:none){.recipeCard:hover{transform:none;box-shadow:none}.recipeCard:hover .foodSymbol{transform:none}}
 .nutritionPanel{margin:25px 0;border:1px solid var(--line);border-radius:5px;padding:26px 30px;background:#fffdf8}.nutritionHead{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.nutritionHead h2{font-size:29px;margin-top:7px}.nutritionToggle{display:flex;gap:4px;flex-wrap:wrap}.nutritionToggle button{background:none;border:1px solid var(--line);border-radius:4px;padding:9px 13px;min-height:44px;font-size:12px}.nutritionToggle button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}.nutritionBasis{font-size:12px;color:var(--muted);margin-top:18px}.macroGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:16px 0}.macroGrid>div{border-top:1px solid var(--line);padding:14px 0}.macroGrid dt{font-size:12px;color:var(--muted)}.macroGrid dd{font-size:28px;margin:6px 0 0;font-variant-numeric:tabular-nums}.macroGrid small{font-size:13px;color:var(--muted)}.nutritionFootnote,.nutritionNotes{font-size:12px;color:var(--muted)}.nutritionNotes{margin-top:15px}.nutritionNotes summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 0}.nutritionNotes p{margin-top:10px}.nutritionNotes a{text-decoration:underline}@media(max-width:620px){.nutritionPanel{padding:22px}.macroGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.nutritionToggle{width:100%}.nutritionToggle button{flex:1}.macroGrid dd{font-size:26px}}@media print{.nutritionToggle{display:none}.nutritionPanel{break-inside:avoid;background:none}}
 .unitToggle{display:flex;gap:6px;margin:0 0 12px}.unitToggle button{flex:1;min-height:44px;padding:10px 12px;border:1px solid #bbc5b2;border-radius:4px;background:transparent;font-size:13px}.unitToggle button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:white}.unitNote{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:16px}@media print{.unitToggle button[aria-pressed=false]{display:none}.unitToggle button[aria-pressed=true]{color:var(--ink);background:none;border:0;padding:0;text-align:left;min-height:0}}
+/* Theme preference applies to every route, including owner sign-in. */
+:root{color-scheme:light}.themeToggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);padding:10px}.themeToggle:hover{background:var(--line)}.themeToggle[aria-pressed=true] .icon{fill:currentColor}.headerInner{gap:28px}.headerNote{margin-left:auto}
+html[data-theme=dark]{color-scheme:dark;--paper:#171e19;--ink:#eef0e5;--muted:#b7c1b2;--line:#414d40;--green:#aec99a;--orange:#eea487}
+html[data-theme=dark] .primary,html[data-theme=dark] .filters button.active,html[data-theme=dark] .nutritionToggle button[aria-pressed=true],html[data-theme=dark] .unitToggle button[aria-pressed=true]{background:#aec99a;color:#172217;border-color:#aec99a}
+html[data-theme=dark] .primary:hover{background:#c2d9b1}
+html[data-theme=dark] .recipeCard,html[data-theme=dark] .nutritionPanel{background:#202a22}
+html[data-theme=dark] .ingredients,html[data-theme=dark] .servingsPanel,html[data-theme=dark] .notebookNote,html[data-theme=dark] .adminCard{background:#263128}
+html[data-theme=dark] .search{background:#202a22;border-color:var(--line)}
+html[data-theme=dark] .notice{background:#392e25;border-color:var(--orange)}
+html[data-theme=dark] .notice p{color:#e6c6b3}
+html[data-theme=dark] .orbit{background:#2b382b}
+html[data-theme=dark] .plate{background:#202a22;border-color:#69775a}
+html[data-theme=dark] .plateInner{border-color:#69775a}
+html[data-theme=dark] .artTag{background:#a64a31;color:#fff8ed}
+html[data-theme=dark] .cardVisual{background:#3a3327;color:#dcc199}
+html[data-theme=dark] .tone2 .cardVisual{background:#2e3e30;color:#bbd0a8}
+html[data-theme=dark] .tone3 .cardVisual{background:#3a3e28;color:#cbd39d}
+html[data-theme=dark] .tone4 .cardVisual{background:#443029;color:#e5b199}
+html[data-theme=dark] .ingredients li{border-color:var(--line)}
+html[data-theme=dark] .ingredients input:checked+span{color:#a4af9f}
+html[data-theme=dark] .stepper,html[data-theme=dark] .adminCard input,html[data-theme=dark] .adminCard select,html[data-theme=dark] .unitToggle button{border-color:#64735c}
+html[data-theme=dark] .stepper button:hover:not(:disabled){background:#3e503a}
+html[data-theme=dark] .adminError{color:#ffb4ac}
+html[data-theme=dark] .chefRibbon,html[data-theme=dark] .ownerBadge{background:#ac302a;color:#fff}
+html[data-theme=dark] .chefSelected{border-color:#e67a70}
+@media(max-width:767px){.headerInner{gap:8px;flex-wrap:wrap}.headerInner nav{margin-left:auto}.headerInner .themeToggle{margin-left:2px}}
+@media(max-width:360px){.headerInner{padding-left:16px;padding-right:16px}.headerInner .brand{font-size:19px}.headerInner nav{font-size:11px}.headerInner nav .icon{display:none}.brandMark.icon{width:21px;height:21px;margin-right:4px}}
+@media print{html[data-theme=dark]{color-scheme:light;--paper:#fff;--ink:#263c2e;--muted:#646a5f;--line:#d9dccf;--green:#304b35;--orange:#aa4c32}html[data-theme=dark] .nutritionPanel,html[data-theme=dark] .ingredients,html[data-theme=dark] .servingsPanel,html[data-theme=dark] .notice{background:#fff;color:var(--ink)}html[data-theme=dark] .notice p{color:var(--muted)}.themeToggle{display:none}}

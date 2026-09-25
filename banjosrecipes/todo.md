@@ -1,7 +1,6 @@
 # To do:
 - Personal: add photos to each recipe
 - Add a meal prep section (gym) add recipies used there
-- Metric/imperial toggle
 - Dark mode
 - "Recently viewed" or favorites using localStorage
 - Add Recipe structured data (schema.org Recipe JSON-LD) to each [slug] page — this is what lets Google show rich recipe cards in search results.
