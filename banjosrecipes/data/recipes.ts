@@ -1107,7 +1107,6 @@ export const recipes: Recipe[] = [
     "slug": "mongolian-beef",
     "title": "Mongolian Beef",
     "category": "Mains",
-    "mealPrep": true,
     "ingredients": [
       {
         "name": "beef flank steak thinly sliced (between .125 to .25 inch thick)",

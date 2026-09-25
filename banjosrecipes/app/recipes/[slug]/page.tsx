@@ -49,10 +49,10 @@ function CookingView({ recipe }: { recipe: Recipe }) {
   const multiplier = servings / recipe.baseServings
   const invalid = validServings(draft) === null
 
-  const totalMinutes =
-    recipe.prepMinutes +
-    recipe.cookMinutes +
-    (recipe.restMinutes ?? 0)
+  // const totalMinutes =
+  //   recipe.prepMinutes +
+  //   recipe.cookMinutes +
+  //   (recipe.restMinutes ?? 0)
 
   return (
     <main className="container detail">
@@ -71,7 +71,7 @@ function CookingView({ recipe }: { recipe: Recipe }) {
           From the personal recipe notebook.
         </p>
 
-        <div
+        {/* <div
           className="recipeTimes"
           aria-label="Estimated recipe time"
         >
@@ -106,7 +106,7 @@ function CookingView({ recipe }: { recipe: Recipe }) {
               {formatMinutes(totalMinutes)}
             </strong>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {isChoice && (
