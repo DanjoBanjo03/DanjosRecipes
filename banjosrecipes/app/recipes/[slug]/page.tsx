@@ -17,6 +17,21 @@ import {
 } from "@/lib/units"
 import { useChefsChoice } from "@/lib/chefs-choice"
 
+function formatMinutes(minutes: number) {
+  if (minutes < 60) {
+    return `${minutes} min`
+  }
+
+  const hours = Math.floor(minutes / 60)
+  const remainingMinutes = minutes % 60
+
+  if (remainingMinutes === 0) {
+    return `${hours} hr${hours === 1 ? "" : "s"}`
+  }
+
+  return `${hours} hr${hours === 1 ? "" : "s"} ${remainingMinutes} min`
+}
+
 function CookingView({ recipe }: { recipe: Recipe }) {
   const { choice } = useChefsChoice()
   const isChoice = choice === recipe.slug
@@ -34,6 +49,11 @@ function CookingView({ recipe }: { recipe: Recipe }) {
   const multiplier = servings / recipe.baseServings
   const invalid = validServings(draft) === null
 
+  const totalMinutes =
+    recipe.prepMinutes +
+    recipe.cookMinutes +
+    (recipe.restMinutes ?? 0)
+
   return (
     <main className="container detail">
       <Link className="back" href="/recipes">
@@ -50,6 +70,43 @@ function CookingView({ recipe }: { recipe: Recipe }) {
         <p className="intro">
           From the personal recipe notebook.
         </p>
+
+        <div
+          className="recipeTimes"
+          aria-label="Estimated recipe time"
+        >
+          <div>
+            <span>Prep</span>
+            <strong>
+              {formatMinutes(recipe.prepMinutes)}
+            </strong>
+          </div>
+
+          <div>
+            <span>Cook</span>
+            <strong>
+              {recipe.cookMinutes > 0
+                ? formatMinutes(recipe.cookMinutes)
+                : "No cooking"}
+            </strong>
+          </div>
+
+          {recipe.restMinutes ? (
+            <div>
+              <span>Wait</span>
+              <strong>
+                {formatMinutes(recipe.restMinutes)}
+              </strong>
+            </div>
+          ) : null}
+
+          <div>
+            <span>Total</span>
+            <strong>
+              {formatMinutes(totalMinutes)}
+            </strong>
+          </div>
+        </div>
       </div>
 
       {isChoice && (
@@ -65,7 +122,6 @@ function CookingView({ recipe }: { recipe: Recipe }) {
         </aside>
       )}
 
-      {/* SERVINGS */}
       <section
         className="servingsPanel"
         aria-labelledby="servings-title"
@@ -152,7 +208,6 @@ function CookingView({ recipe }: { recipe: Recipe }) {
         </p>
       </section>
 
-      {/* INGREDIENTS + METHOD */}
       <div className="cookingGrid">
         <section className="ingredients">
           <p className="eyebrow">
@@ -289,7 +344,6 @@ function CookingView({ recipe }: { recipe: Recipe }) {
         </section>
       </div>
 
-      {/* NUTRITION IS NOW BELOW THE RECIPE */}
       <NutritionPanel
         slug={recipe.slug}
         baseServings={recipe.baseServings}

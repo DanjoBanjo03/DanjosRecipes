@@ -1,5 +1,5 @@
 export type Ingredient = { name: string; amount?: number; maximum?: number; unit?: string; heading?: boolean }
-export type Recipe = { slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; references: {title: string; url: string}[] }
+export type Recipe = { slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
 export const recipes: Recipe[] = [
   {
     "slug": "shrimp-marinade",
@@ -1107,6 +1107,7 @@ export const recipes: Recipe[] = [
     "slug": "mongolian-beef",
     "title": "Mongolian Beef",
     "category": "Mains",
+    "mealPrep": true,
     "ingredients": [
       {
         "name": "beef flank steak thinly sliced (between .125 to .25 inch thick)",

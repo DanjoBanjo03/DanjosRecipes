@@ -5,8 +5,6 @@
 - Add Recipe structured data (schema.org Recipe JSON-LD) to each [slug] page — this is what lets Google show rich recipe cards in search results.
 - Add a sitemap.ts and robots.ts (Next.js supports these natively) so the site gets indexed properly.
 - Give each recipe page proper metadata (title/description) instead of relying on defaults — right now you likely have generic title tags across pages.
-- Rate-limit the admin login route (app/api/admin/login/route.ts) — right now nothing in the code you showed me stops repeated password attempts.
-- Add a basic CSP / security headers in next.config.ts given you're running real auth on this.
 
 # Claude Ideas:
 
