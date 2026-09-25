@@ -8,8 +8,7 @@ import { ingredientText, validServings, MIN_SERVINGS, MAX_SERVINGS } from "@/lib
 import { useChefsChoice } from "@/lib/chefs-choice"
 
 function CookingView({recipe}:{recipe:Recipe}) {
- const { choice, choose } = useChefsChoice()
- const [choiceError,setChoiceError]=useState(false)
+ const { choice } = useChefsChoice()
  const isChoice=choice===recipe.slug
  const [servings,setServings]=useState(recipe.baseServings)
  const [draft,setDraft]=useState(String(recipe.baseServings))
@@ -20,7 +19,7 @@ function CookingView({recipe}:{recipe:Recipe}) {
  return <main className="container detail">
   <Link className="back" href="/recipes">← Back to the collection</Link>
   <div className="detailTitle"><p className="eyebrow">RECIPE {String(recipe.number).padStart(2,"0")} / {recipe.category}</p><h1>{recipe.title}</h1><p className="intro">From the personal recipe notebook.</p></div>
-  <div className="chefControls"><button className={`chefButton ${isChoice?"chosen":""}`} aria-pressed={isChoice} onClick={()=>setChoiceError(!choose(isChoice?"":recipe.slug))}>{isChoice?"★ Chef’s choice · Remove pick":"☆ Make this Chef’s choice"}</button><p aria-live="polite">{choiceError?"Couldn’t save your pick. Please enable browser storage and try again.":isChoice?"Your pick appears first in the collection. Saved in this browser.":"Pick one favourite to feature first in your collection."}</p></div>
+  {isChoice&&<p className="ownerBadge">★ Chef’s choice</p>}
   {recipe.note&&<aside className="notice"><b>Completed with suggested details</b><p>{recipe.note}</p></aside>}
   <section className="servingsPanel" aria-labelledby="servings-title">
    <div><p className="eyebrow">MAKE ENOUGH FOR EVERYONE</p><h2 id="servings-title">How many people?</h2><p>Base recipe: {recipe.baseServings} people. {recipe.servingNote}</p></div>
