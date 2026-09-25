@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { recipes } from "@/data/recipes"
 import RecipeView from "./RecipeView"
+import { recipeJsonLd } from "@/lib/recipe-schema"
 
 type RecipePageProps = { params: Promise<{ slug: string }> }
 
@@ -30,5 +31,13 @@ export async function generateMetadata({ params }: RecipePageProps): Promise<Met
 
 export default async function RecipePage({ params }: RecipePageProps) {
   const recipe = getRecipe((await params).slug)
-  return <RecipeView key={recipe.slug} recipe={recipe} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: recipeJsonLd(recipe) }}
+      />
+      <RecipeView key={recipe.slug} recipe={recipe} />
+    </>
+  )
 }
