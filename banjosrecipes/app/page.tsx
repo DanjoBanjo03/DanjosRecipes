@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import { DifficultyMeter } from "@/components/DifficultyMeter"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { pickSurpriseRecipe } from "@/lib/surprise-recipe"
@@ -65,7 +66,7 @@ export default function Home() {
       </button>
       <p id="surprise-help">{visible.length === 0 ? "Try another filter to find a surprise." : visible.length === 1 ? "One recipe matches — let’s make it." : "A random pick from these recipes, favoring ones you haven’t viewed recently."}</p>
     </div>
-    <div className="recipeGrid">{visible.map(r=><Link key={r.slug} href={`/recipes/${r.slug}`} className={`recipeCard tone${categories.indexOf(r.category)} ${r.slug===choice?"chefSelected":""}`} >{r.slug===choice&&<span className="chefRibbon">Chef’s choice</span>}<div className="cardVisual" aria-hidden="true"><span className="cardIndex">NO. {String(r.number).padStart(2,"0")}</span><div className="foodSymbol"><CategoryIcon category={r.category}/></div><span className="visualLabel">THE RECIPE COLLECTION</span></div><div className="cardBody"><p className="eyebrow">{r.category}</p><h3>{r.title}</h3><div className="cardBottom"><span>{r.note ? "Suggested details" : "From the notebook"}</span><Icon name="arrow" className="arrow"/></div></div></Link>)}</div>
+    <div className="recipeGrid">{visible.map(r=><Link key={r.slug} href={`/recipes/${r.slug}`} className={`recipeCard tone${categories.indexOf(r.category)} ${r.slug===choice?"chefSelected":""}`} >{r.slug===choice&&<span className="chefRibbon">Chef’s choice</span>}<div className="cardVisual" aria-hidden="true"><span className="cardIndex">NO. {String(r.number).padStart(2,"0")}</span><div className="foodSymbol"><CategoryIcon category={r.category}/></div><span className="visualLabel">THE RECIPE COLLECTION</span></div><div className="cardBody"><p className="eyebrow">{r.category}</p><h3>{r.title}</h3><DifficultyMeter level={r.difficulty} /><div className="cardBottom"><span>{r.note ? "Suggested details" : "From the notebook"}</span><Icon name="arrow" className="arrow"/></div></div></Link>)}</div>
     
     {visible.length===0&&<div className="empty"><h3>{category === "Favorites" && favorites.length === 0 ? "No favorites yet" : "No recipes found"}</h3><p>{category === "Favorites" && favorites.length === 0 ? "Open a recipe and choose Save to favorites. Your favorites stay in this browser." : "Try a different ingredient or category."}</p><button className="primary" onClick={()=>{setQuery("");setCategory("All recipes")}}>Show all recipes</button></div>}
     

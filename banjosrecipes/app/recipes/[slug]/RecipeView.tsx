@@ -1,7 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import { DifficultyMeter } from "@/components/DifficultyMeter"
 import { Icon } from "@/components/Icon"
+import { IngredientSwap } from "@/components/IngredientSwap"
 import { NutritionPanel } from "@/components/NutritionPanel"
 import { useEffect, useState } from "react"
 import { useRecipeLibrary } from "@/lib/use-recipe-library"
@@ -67,6 +69,7 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
         </p>
 
         <h1>{recipe.title}</h1>
+        <DifficultyMeter level={recipe.difficulty} explain />
         <button className="favoriteButton" type="button" aria-pressed={favorite} onClick={() => toggleFavorite(recipe.slug)}>
           <svg viewBox="0 0 24 24" aria-hidden="true" fill={favorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.7"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
           {favorite ? "Saved to favorites" : "Save to favorites"}
@@ -257,12 +260,14 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
             {servings === 1 ? "person" : "people"} · check off as you go
           </p>
 
+          <p className="swapHint">Out of something? Open “Need a swap?” below an ingredient. Suggestions do not change the recipe or nutrition estimates.</p>
           <ul>
             {recipe.ingredients.map((ing, i) => (
               <li key={i}>
                 {ing.heading ? (
                   <h3>{ing.name}</h3>
                 ) : (
+                  <>
                   <label>
                     <input
                       type="checkbox"
@@ -284,6 +289,8 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
                       )}
                     </span>
                   </label>
+                  <IngredientSwap ingredient={ing} recipeSlug={recipe.slug} multiplier={multiplier} units={units} />
+                  </>
                 )}
               </li>
             ))}

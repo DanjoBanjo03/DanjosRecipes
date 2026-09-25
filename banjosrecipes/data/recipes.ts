@@ -1,5 +1,6 @@
 export type Ingredient = { name: string; amount?: number; maximum?: number; unit?: string; heading?: boolean }
 export type Recipe = {
+  difficulty: 1 | 2 | 3;
   description: string; prepMinutes: number; cookMinutes: number; restMinutes: number; restLabel: string; timeNote: string; slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
 export const recipes: Recipe[] = [
   {
@@ -64,7 +65,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 6,
     "restMinutes": 15,
     "restLabel": "Marinating",
-    "timeNote": "Allows 15 minutes to marinate; cook shrimp in a single layer."
+    "timeNote": "Allows 15 minutes to marinate; cook shrimp in a single layer.",
+    "difficulty": 1
   },
   {
     "slug": "chipotle-southwest-sauce",
@@ -147,7 +149,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 30,
     "restLabel": "Chilling",
-    "timeNote": "Includes 30 minutes for the flavours to blend."
+    "timeNote": "Includes 30 minutes for the flavours to blend.",
+    "difficulty": 1
   },
   {
     "slug": "chili",
@@ -261,7 +264,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 150,
     "restMinutes": 480,
     "restLabel": "Soaking",
-    "timeNote": "Includes an 8-hour overnight soak, about 90 minutes for the beans and a 1-hour simmer. Bean age can change cooking time."
+    "timeNote": "Includes an 8-hour overnight soak, about 90 minutes for the beans and a 1-hour simmer. Bean age can change cooking time.",
+    "difficulty": 2
   },
   {
     "slug": "tiramisu",
@@ -349,7 +353,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 240,
     "restLabel": "Chilling",
-    "timeNote": "Includes a minimum 4-hour chill. Chilling overnight is also an option."
+    "timeNote": "Includes a minimum 4-hour chill. Chilling overnight is also an option.",
+    "difficulty": 2
   },
   {
     "slug": "guacamole",
@@ -416,7 +421,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 0,
     "restLabel": "",
-    "timeNote": "Ready after blending; no cooking needed."
+    "timeNote": "Ready after blending; no cooking needed.",
+    "difficulty": 1
   },
   {
     "slug": "salsa",
@@ -475,7 +481,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 25,
     "restLabel": "Chilling",
-    "timeNote": "Includes 25 minutes of chilling before serving."
+    "timeNote": "Includes 25 minutes of chilling before serving.",
+    "difficulty": 1
   },
   {
     "slug": "pico-de-gallo",
@@ -541,7 +548,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 180,
     "restLabel": "Chilling",
-    "timeNote": "Includes the 3-hour refrigeration time from the method."
+    "timeNote": "Includes the 3-hour refrigeration time from the method.",
+    "difficulty": 1
   },
   {
     "slug": "miso-soup",
@@ -603,7 +611,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 10,
     "restMinutes": 0,
     "restLabel": "",
-    "timeNote": "Includes bringing the broth to a simmer and cooking the greens."
+    "timeNote": "Includes bringing the broth to a simmer and cooking the greens.",
+    "difficulty": 1
   },
   {
     "slug": "sweet-and-sour-chicken",
@@ -704,7 +713,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 20,
     "restMinutes": 0,
     "restLabel": "",
-    "timeNote": "Allows time for frying and thickening the sauce; additional batches may take longer."
+    "timeNote": "Allows time for frying and thickening the sauce; additional batches may take longer.",
+    "difficulty": 2
   },
   {
     "slug": "cream-puffs",
@@ -866,7 +876,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 45,
     "restMinutes": 120,
     "restLabel": "Cooling & chilling",
-    "timeNote": "Allows cooling the custard, chilling the filling and cooling the pastry. Baking multiple trays may take longer."
+    "timeNote": "Allows cooling the custard, chilling the filling and cooling the pastry. Baking multiple trays may take longer.",
+    "difficulty": 3
   },
   {
     "slug": "green-salad-dressing",
@@ -942,7 +953,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 0,
     "restMinutes": 0,
     "restLabel": "",
-    "timeNote": "Ready after blending; refrigerate until serving."
+    "timeNote": "Ready after blending; refrigerate until serving.",
+    "difficulty": 1
   },
   {
     "slug": "ramen",
@@ -1068,7 +1080,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 30,
     "restMinutes": 0,
     "restLabel": "",
-    "timeNote": "Assumes the broth and eggs are prepared while the chicken cooks."
+    "timeNote": "Assumes the broth and eggs are prepared while the chicken cooks.",
+    "difficulty": 2
   },
   {
     "slug": "pizza",
@@ -1180,7 +1193,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 20,
     "restMinutes": 45,
     "restLabel": "Rising",
-    "timeNote": "Assumes the sauce simmers while the dough rises. Allows 45 minutes for rising and about 15–20 minutes to bake."
+    "timeNote": "Assumes the sauce simmers while the dough rises. Allows 45 minutes for rising and about 15–20 minutes to bake.",
+    "difficulty": 2
   },
   {
     "slug": "mongolian-beef",
@@ -1305,7 +1319,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 15,
     "restMinutes": 15,
     "restLabel": "Marinating",
-    "timeNote": "Includes a 15-minute marinade; excludes cooking rice."
+    "timeNote": "Includes a 15-minute marinade; excludes cooking rice.",
+    "difficulty": 2
   },
   {
     "slug": "korean-popcorn-chicken",
@@ -1424,7 +1439,8 @@ export const recipes: Recipe[] = [
     "cookMinutes": 20,
     "restMinutes": 15,
     "restLabel": "Marinating",
-    "timeNote": "Includes a 15-minute marinade and frying in small batches; excludes cooking rice."
+    "timeNote": "Includes a 15-minute marinade and frying in small batches; excludes cooking rice.",
+    "difficulty": 2
   },
   {
     "slug": "crispy-beef-taquitos",
@@ -1557,7 +1573,8 @@ export const recipes: Recipe[] = [
       "Warm the tortillas briefly if needed so they roll without cracking. On each tortilla, add layer 1: 20 g low-fat cheese; layer 2: one-tenth of the beef mixture for the base batch of 10 taquitos; layer 3: another 20 g low-fat cheese. Roll tightly. When scaling, divide the beef mixture equally among the tortillas and keep 20 g low-fat cheese in each cheese layer (40 g per taquito).",
       "Heat a little of the remaining oil in a pan over medium heat. Place the taquitos seam-side down and toast in batches, turning carefully, until crispy on all sides and the cheese is melted, about 6–8 minutes per batch. Add a light coating of oil as needed.",
       "Serve the crisp taquitos with the blended avocado sauce."
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "slug": "green-sauce",
@@ -1647,6 +1664,7 @@ export const recipes: Recipe[] = [
       "Wash and dry the herbs. Remove the jalapeño stems and seeds. Zest and juice the lime.",
       "Add the mayonnaise, Greek yogurt, cilantro, basil, mint, parsley, jalapeños, ají amarillo paste, lime zest and juice, white wine vinegar, honey, Dijon mustard and a pinch of salt to a blender. Blend until smooth, scraping down the sides as needed.",
       "With the blender running, slowly stream in the olive oil until the sauce is smooth and emulsified. Taste and adjust the salt. Serve as a dressing, dip or sauce."
-    ]
+    ],
+    "difficulty": 1
   }
 ]
