@@ -28,6 +28,7 @@ function matchSwap(name: string, recipeSlug: string): Swap | undefined {
   if (/smoked paprika/.test(n)) return { name: "sweet paprika", note: "Use the same quantity. You’ll keep the color but lose the smoky flavor." }
   if (/red pepper flakes|cayenne/.test(n)) return { name: "another ground chili or chili flakes", note: "Start with much less and taste. Heat varies too much for a reliable one-to-one swap." }
   if (/ground beef/.test(n)) return { name: "ground turkey", note: "Use the same weight. It is usually leaner, so avoid overcooking and cook it fully according to its package instructions." }
+  if (/flank steak/.test(n) && recipeSlug === "mongolian-beef") return { name: "boneless chicken breast, thinly sliced", note: "Use the same weight. Daniel has tried and enjoyed this variation. Keep the marinade and sauce, but cook the chicken fully through; cooking time and nutrition will differ." }
   if (/flank steak/.test(n)) return { name: "sirloin steak, thinly sliced across the grain", note: "Use the same weight and stir-fry in small batches." }
   if (/boneless.*chicken|chicken breasts/.test(n)) return { name: n.includes('thigh') ? "boneless chicken breast" : "boneless chicken thighs", note: "Use the same weight. Breast is leaner; cooking time changes with cut and thickness. Cook the replacement fully." }
   if (/cornstarch/.test(n) && ['sweet-and-sour-chicken', 'mongolian-beef'].includes(recipeSlug)) return { name: "potato starch", note: "Use the same quantity for this coating. The texture may be slightly different." }

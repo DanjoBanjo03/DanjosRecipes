@@ -125,6 +125,13 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
         </p>
       )}
 
+      {recipe.variation && (
+        <aside className="notice">
+          <b>{recipe.variation.title}</b>
+          <p>{recipe.variation.text}</p>
+        </aside>
+      )}
+
       {recipe.note && (
         <aside className="notice">
           <b>Completed with suggested details</b>

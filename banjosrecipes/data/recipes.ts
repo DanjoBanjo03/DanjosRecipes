@@ -1,5 +1,6 @@
 export type Ingredient = { name: string; amount?: number; maximum?: number; unit?: string; heading?: boolean }
 export type Recipe = {
+  variation?: { title: string; text: string };
   difficulty: 1 | 2 | 3;
   description: string; prepMinutes: number; cookMinutes: number; restMinutes: number; restLabel: string; timeNote: string; slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
 export const recipes: Recipe[] = [
@@ -1320,7 +1321,11 @@ export const recipes: Recipe[] = [
     "restMinutes": 15,
     "restLabel": "Marinating",
     "timeNote": "Includes a 15-minute marinade; excludes cooking rice.",
-    "difficulty": 2
+    "difficulty": 2,
+    "variation": {
+      "title": "Also great with chicken breast",
+      "text": "Daniel has made this with chicken breast and loved the result. Swap the beef for the same weight of thinly sliced, boneless chicken breast and use the same marinade and sauce. Cook the chicken fully through; cooking time may differ from the beef version. The nutrition estimates shown are for beef."
+    }
   },
   {
     "slug": "korean-popcorn-chicken",
