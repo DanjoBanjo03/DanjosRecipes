@@ -1,8 +1,10 @@
 export type Ingredient = { name: string; amount?: number; maximum?: number; unit?: string; heading?: boolean }
-export type Recipe = { prepMinutes: number; cookMinutes: number; restMinutes: number; restLabel: string; timeNote: string; slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
+export type Recipe = {
+  description: string; prepMinutes: number; cookMinutes: number; restMinutes: number; restLabel: string; timeNote: string; slug: string; title: string; category: string; ingredients: Ingredient[]; steps: string[]; note: string | null; source: string | null; number: number; baseServings: number; servingNote: string; mealPrep?: boolean;  references: {title: string; url: string}[] }
 export const recipes: Recipe[] = [
   {
     "slug": "shrimp-marinade",
+    "description": "Make lemon-garlic shrimp with olive oil, oregano and a little chili heat. Follow the simple marinade and cooking steps, with adjustable portions.",
     "title": "Shrimp",
     "category": "Mains",
     "ingredients": [
@@ -66,6 +68,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "chipotle-southwest-sauce",
+    "description": "Make creamy chipotle southwest sauce with mayonnaise, lime, cilantro and smoky spices. Adjust the quantities for sandwiches, wraps or dipping.",
     "title": "Chipotle Southwest",
     "category": "Sauces & sides",
     "ingredients": [
@@ -148,6 +151,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "chili",
+    "description": "Cook hearty beef chili with black beans, kidney beans, tomatoes and warming spices. Includes bean-soaking guidance, cooking steps and adjustable servings.",
     "title": "Chili",
     "category": "Mains",
     "ingredients": [
@@ -261,6 +265,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "tiramisu",
+    "description": "Make a no-bake tiramisu with coffee-dipped ladyfingers, mascarpone cream and cocoa. Includes a mascarpone substitute and chilling guidance.",
     "title": "Tiramisu",
     "category": "Desserts",
     "ingredients": [
@@ -348,6 +353,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "guacamole",
+    "description": "Make fresh guacamole with avocado, onion, jalape\u00f1o, coriander and citrus. Follow the simple method and adjust the portions for your table.",
     "title": "Guacamole",
     "category": "Sauces & sides",
     "ingredients": [
@@ -414,6 +420,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "salsa",
+    "description": "Blend a fresh tomato salsa with jalape\u00f1o, lemon and coriander. Includes ingredient quantities, chilling guidance and adjustable servings.",
     "title": "Salsa",
     "category": "Sauces & sides",
     "ingredients": [
@@ -472,6 +479,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "pico-de-gallo",
+    "description": "Make pico de gallo with diced tomatoes, red onion, cilantro, jalape\u00f1o and lime. Follow the simple steps and scale the ingredients for your crowd.",
     "title": "Pico De Gallo",
     "category": "Sauces & sides",
     "ingredients": [
@@ -537,6 +545,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "miso-soup",
+    "description": "Make comforting miso soup with tofu, greens, green onion and optional nori. Choose broth or dashi and adjust ingredient quantities to your servings.",
     "title": "Miso Soup",
     "category": "Soups",
     "ingredients": [
@@ -598,6 +607,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "sweet-and-sour-chicken",
+    "description": "Make crispy sweet and sour chicken with bell pepper and a tangy garlic sauce. Follow the frying and sauce steps, with adjustable ingredient quantities.",
     "title": "Sweet and Sour Chicken",
     "category": "Mains",
     "ingredients": [
@@ -698,6 +708,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "cream-puffs",
+    "description": "Bake cream puffs with choux pastry, vanilla custard filling and chocolate topping. Includes step-by-step instructions, cooling times and adjustable portions.",
     "title": "Cream Puffs (Profiteroles)",
     "category": "Desserts",
     "ingredients": [
@@ -859,6 +870,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "green-salad-dressing",
+    "description": "Blend a carrot-ginger salad dressing with rice vinegar, soy sauce and garlic. Follow the simple method and adjust the batch size for your salads.",
     "title": "Green Salad Dressing",
     "category": "Sauces & sides",
     "ingredients": [
@@ -934,6 +946,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "ramen",
+    "description": "Make chicken ramen with ginger-garlic broth, shiitake mushrooms, noodles and eggs. Includes step-by-step instructions and adjustable servings.",
     "title": "Ramen",
     "category": "Soups",
     "ingredients": [
@@ -1059,6 +1072,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "pizza",
+    "description": "Make homemade pizza with yeast dough, tomato-garlic sauce and optional mozzarella. Includes rising and baking guidance, with adjustable portions.",
     "title": "Pizza",
     "category": "Mains",
     "ingredients": [
@@ -1170,6 +1184,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "mongolian-beef",
+    "description": "Cook Mongolian beef with tender flank steak, garlic, onions and a sweet soy sauce. Follow the marinade and stir-fry steps, with adjustable servings.",
     "title": "Mongolian Beef",
     "category": "Mains",
     "ingredients": [
@@ -1294,6 +1309,7 @@ export const recipes: Recipe[] = [
   },
   {
     "slug": "korean-popcorn-chicken",
+    "description": "Make crispy Korean popcorn chicken tossed in a sweet, spicy gochujang sauce. Includes marinating, frying and sauce steps, with adjustable servings.",
     "title": "Korean Popcorn Chicken",
     "category": "Mains",
     "ingredients": [
