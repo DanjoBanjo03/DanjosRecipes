@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { recipeUrl, recipeShareImageUrl } from "@/lib/site-url"
 import { notFound } from "next/navigation"
 import { recipes } from "@/data/recipes"
 import RecipeView from "./RecipeView"
@@ -20,12 +21,13 @@ export async function generateMetadata({ params }: RecipePageProps): Promise<Met
   const recipe = getRecipe((await params).slug)
   const title = `${recipe.title} Recipe | Danjo Recipes`
   const description = recipe.description
+  const image = { url: recipeShareImageUrl(recipe.slug), width: 1200, height: 630, alt: `${recipe.title} — Danjo Recipes`, type: "image/png" }
 
   return {
     title,
     description,
-    openGraph: { title, description, type: "article", siteName: "Danjo Recipes" },
-    twitter: { card: "summary", title, description },
+    openGraph: { title, description, type: "article", siteName: "Danjo Recipes", url: recipeUrl(recipe.slug), images: [image] },
+    twitter: { card: "summary_large_image", title, description, images: [{ url: image.url, alt: image.alt }] },
   }
 }
 

@@ -69,17 +69,15 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
           RECIPE {String(recipe.number).padStart(2, "0")} / {recipe.category}
         </p>
 
+        <p className="printOnly printBrand">Danjo Recipes</p>
         <h1>{recipe.title}</h1>
+        <p className="printOnly printSummary">For {servings} {servings === 1 ? "person" : "people"} · {units === "metric" ? "Metric" : "US imperial"} ingredients</p>
         <DifficultyMeter level={recipe.difficulty} explain />
         <button className="favoriteButton" type="button" aria-pressed={favorite} onClick={() => toggleFavorite(recipe.slug)}>
           <svg viewBox="0 0 24 24" aria-hidden="true" fill={favorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.7"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
           {favorite ? "Saved to favorites" : "Save to favorites"}
         </button>
         <p className="libraryNote">Favorites are saved in this browser.</p>
-
-        <p className="intro">
-          From the personal recipe notebook.
-        </p>
 
         <div
           className="recipeTimes"
