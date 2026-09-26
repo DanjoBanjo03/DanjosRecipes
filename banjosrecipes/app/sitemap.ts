@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: RECIPE_SITE_URL },
     { url: `${RECIPE_SITE_URL}/recipes` },
+    { url: `${RECIPE_SITE_URL}/dinner` },
     ...recipes.map(({ slug }) => ({
       url: `${RECIPE_SITE_URL}/recipes/${slug}`,
     })),

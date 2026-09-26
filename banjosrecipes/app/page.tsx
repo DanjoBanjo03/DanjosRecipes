@@ -68,6 +68,7 @@ export default function Home() {
       <p>Matches all selected tags for the written recipe. Recipes needing substitutions or special label checks are excluded. Always read the allergen notes.</p>
     </fieldset>
     <div className="surpriseRow">
+      <Link className="surpriseButton" href="/dinner">Plan a dinner</Link>
       <button className="surpriseButton" type="button" onClick={surpriseMe} disabled={visible.length === 0} aria-describedby="surprise-help">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="16" cy="8" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="8" cy="16" r="1" fill="currentColor"/><circle cx="16" cy="16" r="1" fill="currentColor"/></svg>
         Surprise me
